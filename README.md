@@ -18,7 +18,7 @@
    npm start:dev
    ```
 
-# Welcome to your Expo app 👋
+# Client
 
 You will need ios or android simulator. If your on macOS, you can install simulator with xcode https://forums.developer.apple.com/forums/thread/677124
 
@@ -29,7 +29,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Install dependencies
 
    ```bash
-   npm install
+   cd client && npm install
    ```
 
 2. Start the app
