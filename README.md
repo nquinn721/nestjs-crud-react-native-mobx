@@ -9,8 +9,9 @@ SQL Server:
 
 # Server
 
-Nest js docs: https://docs.nestjs.com/
-Nets js crud docs: https://www.npmjs.com/package/@nestjsx/crud
+Docs
+Nest js: https://docs.nestjs.com/
+Nets js crud: https://www.npmjs.com/package/@nestjsx/crud
 
 1. Install dependencies
 
@@ -31,6 +32,13 @@ Nets js crud docs: https://www.npmjs.com/package/@nestjsx/crud
    ```
 
 # Client
+
+Docs
+Mobx: https://mobx.js.org/README.html
+React Native Elements UI: https://reactnativeelements.com/docs
+
+NOTE::::: We might switch libraries to https://wix.github.io/react-native-ui-lib/
+We need to decide soon
 
 You will need ios or android simulator. If your on macOS, you can install simulator with xcode https://forums.developer.apple.com/forums/thread/677124
 
