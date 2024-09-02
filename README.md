@@ -1,4 +1,16 @@
+# About
+
+This is a build out server with authentication and db connections
+DB currently is called dating (this can be changed)
+If you dont have a db, on mac you can install sql server and sql work bench
+
+Workbench: https://dev.mysql.com/doc/workbench/en/wb-installing-mac.html
+SQL Server:
+
 # Server
+
+Nest js docs: https://docs.nestjs.com/
+Nets js crud docs: https://www.npmjs.com/package/@nestjsx/crud
 
 1. Install dependencies
 
