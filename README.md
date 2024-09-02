@@ -1,4 +1,26 @@
+# Server
+
+1. Install dependencies
+
+   ```bash
+   cd server && npm install
+   ```
+
+2. Start server
+
+   ```bash
+   npm start
+   ```
+
+   or you can start with watching files
+
+   ```bash
+   npm start:dev
+   ```
+
 # Welcome to your Expo app 👋
+
+You will need ios or android simulator. If your on macOS, you can install simulator with xcode https://forums.developer.apple.com/forums/thread/677124
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -13,7 +35,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Start the app
 
    ```bash
-    npx expo start
+    npm start
    ```
 
 In the output, you'll find options to open the app in a
