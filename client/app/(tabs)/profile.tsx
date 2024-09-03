@@ -1,5 +1,5 @@
-import { StyleSheet, Image, Platform, View } from "react-native";
-
+import { StyleSheet } from "react-native";
+import { Button } from "@rneui/themed";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";

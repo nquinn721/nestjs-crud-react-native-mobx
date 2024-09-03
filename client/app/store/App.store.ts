@@ -2,27 +2,16 @@ import { makeObservable, observable, action } from "mobx";
 import axios from "axios";
 
 class AppStore {
-  value = 0;
-  username = "";
-  password = "";
-  accessToken = "";
-  profileData = { username: "" };
+  @observable username = "";
+  @observable password = "";
+  @observable accessToken = "";
+  @observable profileData = { username: "" };
 
   constructor() {
-    makeObservable(this, {
-      value: observable,
-      username: observable,
-      password: observable,
-      profileData: observable,
-      login: action,
-    });
+    makeObservable(this);
   }
 
-  increment() {
-    // Intermediate states will not become visible to observers.
-    this.value++;
-  }
-
+  @action
   async login(username: string, password: string) {
     password = password.toLowerCase();
     const response = await axios.post("http://localhost:3000/auth/login", {
@@ -34,6 +23,7 @@ class AppStore {
     this.getProfile();
   }
 
+  @action
   async getProfile() {
     const response = await axios.get("http://localhost:3000/profile", {
       headers: {
