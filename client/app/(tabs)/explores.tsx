@@ -1,17 +1,22 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { StyleSheet, Image, Platform } from "react-native";
+import { StyleSheet, Image, Platform, View } from "react-native";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import React, { createRef, useRef, useState } from "react";
-import { Button, Input } from "@rneui/base";
+import React, { createRef, useEffect, useRef, useState } from "react";
+import { Button, Card, Input } from "@rneui/base";
 import { observer } from "mobx-react-lite";
 import appStore from "@/app/store/App.store";
+import { mapStore } from "../store/Map.store";
 
 function Explore() {
   const [username, setUsername] = useState("NateDogg");
   const [password, setPassword] = useState("password1");
+  console.log("getting map data");
+  useEffect(() => {
+    mapStore.getMapData();
+  }, []);
 
   return (
     <ParallaxScrollView
@@ -26,6 +31,19 @@ function Explore() {
       <Input placeholder="Username" onChangeText={(v) => setUsername(v)} />
       <Input placeholder="Password" onChangeText={(v) => setPassword(v)} />
       <Button onPress={() => appStore.login(username, password)}>Submit</Button>
+      {mapStore.data?.map((item, i) => (
+        <Card key={i}>
+          <ThemedText>{item.name}</ThemedText>
+          <View>
+            <Image
+              source={{
+                uri: `https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference=${item.photos[0].photo_reference}&key=${mapStore.apiKey}`,
+              }}
+              style={{ width: 100, height: 100 }}
+            />
+          </View>
+        </Card>
+      ))}
     </ParallaxScrollView>
   );
 }
